@@ -24,11 +24,7 @@ class InstallSchema implements InstallSchemaInterface
         $connection = $installer->getConnection();
 
         $table = $connection->newTable(
-<<<<<<< HEAD
             $installer->getTable('example_complex_extension_attributes')
-=======
-            $installer->getTable('example_simple_extension_attributes')
->>>>>>> e03cf9c1f5e189342e7ec5cfe29a1fdeb82a0857
         )->addColumn(
             'id',
             \Magento\Framework\DB\Ddl\Table::TYPE_INTEGER,

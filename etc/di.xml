@@ -1,26 +1,15 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-<<<<<<< HEAD
     <preference for="Yireo\ExampleComplexExtensionAttributes\Api\Data\TrainingDetailsInterface" type="Yireo\ExampleComplexExtensionAttributes\Model\ExampleAttributes" />
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
                 <item name="yireo_example_complex_extension_attributes_test" xsi:type="object">Yireo\ExampleComplexExtensionAttributes\Command\Test</item>
                 <item name="yireo_example_complex_extension_attributes_listing" xsi:type="object">Yireo\ExampleComplexExtensionAttributes\Command\Listing</item>
-=======
-    <type name="Magento\Framework\Console\CommandList">
-        <arguments>
-            <argument name="commands" xsi:type="array">
-                <item name="yireo_example_extension_attributes_test" xsi:type="object">Yireo\ExampleSimpleExtensionAttributes\Command\Test</item>
->>>>>>> e03cf9c1f5e189342e7ec5cfe29a1fdeb82a0857
             </argument>
         </arguments>
     </type>
     <type name="Magento\Catalog\Api\ProductRepositoryInterface">
-<<<<<<< HEAD
         <plugin name="processExampleComplexAttributes" type="Yireo\ExampleComplexExtensionAttributes\Plugin\ProcessExampleAttributes" />
-=======
-        <plugin name="processExampleSimpleExtensionAttributes" type="Yireo\ExampleSimpleExtensionAttributes\Plugin\ProcessExampleAttributes" />
->>>>>>> e03cf9c1f5e189342e7ec5cfe29a1fdeb82a0857
     </type>
 </config>
