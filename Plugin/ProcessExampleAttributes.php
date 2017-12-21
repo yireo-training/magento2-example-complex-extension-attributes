@@ -44,40 +44,6 @@ class ProcessExampleAttributes
     /**
      * @param ProductRepositoryInterface $productRepository
      * @param ProductInterface $product
-     *
-     * @return ProductInterface
-     */
-    public function afterGet(ProductRepositoryInterface $productRepository, ProductInterface $product)
-    {
-        $exampleAttributesModel = $this->getExampleAttributesByProduct($product);
-        if ($exampleAttributesModel === null) {
-            return $product;
-        }
-
-        $product->getExtensionAttributes()->setTrainingDetails($exampleAttributesModel);
-        return $product;
-    }
-
-    /**
-     * @param ProductRepositoryInterface $productRepository
-     * @param ProductInterface $product
-     *
-     * @return ProductInterface
-     */
-    public function afterGetById(ProductRepositoryInterface $productRepository, ProductInterface $product)
-    {
-        $exampleAttributesModel = $this->getExampleAttributesByProduct($product);
-        if ($exampleAttributesModel === null) {
-            return $product;
-        }
-
-        $product->getExtensionAttributes()->setTrainingDetails($exampleAttributesModel);
-        return $product;
-    }
-
-    /**
-     * @param ProductRepositoryInterface $productRepository
-     * @param ProductInterface $product
      * @param bool $saveOptions
      *
      * @return array
