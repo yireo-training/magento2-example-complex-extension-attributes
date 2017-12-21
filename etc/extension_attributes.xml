@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Api/etc/extension_attributes.xsd">
+    <extension_attributes for="Magento\Catalog\Api\Data\ProductInterface">
+        <attribute code="training_details" type="Yireo\ExampleComplexExtensionAttributes\Api\Data\TrainingDetailsInterface">
+            <join reference_table="example_complex_extension_attributes" reference_field="product_id" join_on_field="entity_id">
+                <field>training_date_end</field>
+                <field>training_date_start</field>
+            </join>
+        </attribute>
+    </extension_attributes>
+</config>
