@@ -17,10 +17,6 @@ class ExampleAttributes extends AbstractDb
      */
     protected function _construct()
     {
-<<<<<<< HEAD
         $this->_init('example_complex_extension_attributes', 'id');
-=======
-        $this->_init('example_simple_extension_attributes', 'id');
->>>>>>> e03cf9c1f5e189342e7ec5cfe29a1fdeb82a0857
     }
 }
