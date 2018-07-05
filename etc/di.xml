@@ -4,12 +4,22 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
-                <item name="yireo_example_complex_extension_attributes_test" xsi:type="object">Yireo\ExampleComplexExtensionAttributes\Command\Test</item>
+                <item name="yireo_example_complex_extension_attributes_save" xsi:type="object">Yireo\ExampleComplexExtensionAttributes\Command\Save</item>
                 <item name="yireo_example_complex_extension_attributes_listing" xsi:type="object">Yireo\ExampleComplexExtensionAttributes\Command\Listing</item>
             </argument>
         </arguments>
     </type>
     <type name="Magento\Catalog\Api\ProductRepositoryInterface">
         <plugin name="processExampleComplexAttributes" type="Yireo\ExampleComplexExtensionAttributes\Plugin\ProcessExampleAttributes" />
+    </type>
+    <type name="Yireo\ExampleComplexExtensionAttributes\Command\Listing">
+        <arguments>
+            <argument name="productRepository" xsi:type="object">Magento\Catalog\Api\ProductRepositoryInterface\Proxy</argument>
+        </arguments>
+    </type>
+    <type name="Yireo\ExampleComplexExtensionAttributes\Command\Save">
+        <arguments>
+            <argument name="productRepository" xsi:type="object">Magento\Catalog\Api\ProductRepositoryInterface\Proxy</argument>
+        </arguments>
     </type>
 </config>
