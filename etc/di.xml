@@ -4,7 +4,9 @@
     <type name="Magento\Framework\Console\CommandList">
         <arguments>
             <argument name="commands" xsi:type="array">
+                <!--
                 <item name="yireo_example_complex_extension_attributes_save" xsi:type="object">Yireo\ExampleComplexExtensionAttributes\Command\Save</item>
+                -->
                 <item name="yireo_example_complex_extension_attributes_listing" xsi:type="object">Yireo\ExampleComplexExtensionAttributes\Command\Listing</item>
             </argument>
         </arguments>
