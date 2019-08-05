@@ -5,6 +5,7 @@ namespace Yireo\ExampleComplexExtensionAttributes\Plugin;
 
 use Magento\Catalog\Api\Data\ProductInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
+use Magento\Framework\Exception\AlreadyExistsException;
 use Yireo\ExampleComplexExtensionAttributes\Model\ExampleAttributes;
 use Yireo\ExampleComplexExtensionAttributes\Model\ResourceModel\ExampleAttributes as ResourceModel;
 use Yireo\ExampleComplexExtensionAttributes\Model\ExampleAttributes as RegularModel;
@@ -35,8 +36,7 @@ class ProcessExampleAttributes
     public function __construct(
         RegularModel $model,
         ResourceModel $resourceModel
-    )
-    {
+    ) {
         $this->resourceModel = $resourceModel;
         $this->model = $model;
     }
@@ -47,9 +47,13 @@ class ProcessExampleAttributes
      * @param bool $saveOptions
      *
      * @return array
+     * @throws AlreadyExistsException
      */
-    public function beforeSave(ProductRepositoryInterface $productRepository, ProductInterface $product, $saveOptions = false)
-    {
+    public function beforeSave(
+        ProductRepositoryInterface $productRepository,
+        ProductInterface $product,
+        $saveOptions = false
+    ) {
         $exampleAttributesModel = $this->getExampleAttributesByProduct($product);
         if (!$exampleAttributesModel) {
             $exampleAttributesModel = $this->model;
@@ -79,7 +83,7 @@ class ProcessExampleAttributes
      *
      * @return RegularModel
      */
-    private function getExampleAttributesByProduct(ProductInterface $product) : ExampleAttributes
+    private function getExampleAttributesByProduct(ProductInterface $product): ExampleAttributes
     {
         $collection = $this->model->getCollection();
         $collection->addFieldToFilter('product_id', $product->getId());
